@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>To-Do List — Регина Симоненко</title>
+
+    <link rel="stylesheet" href="dist/css/main.css">
+</head>
+<body>
+
+<div class="app">
+
+    <!-- ================= HEADER ================= -->
+    <header class="app-header">
+        <div class="container app-header__inner">
+            <div>
+                <h1 class="app-header__title">Мои задачи</h1>
+                <p class="app-header__subtitle">Всё, что нужно сделать</p>
+            </div>
+
+            <div class="app-header__actions">
+                <button type="button"
+                        class="theme-switcher"
+                        data-js="theme-toggle"
+                        aria-label="Переключить тему">
+                    <span data-js="theme-icon" aria-hidden="true">🌙</span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- ================= MAIN ================= -->
+    <main class="app__main">
+        <div class="container">
+
+            <!-- Поиск -->
+            <div class="search">
+                <label for="search" class="visually-hidden">Поиск задач</label>
+                <input type="search"
+                       id="search"
+                       class="search__input"
+                       data-js="search"
+                       placeholder="Найти задачу..."
+                       autocomplete="off">
+            </div>
+
+            <!-- Кнопка «Добавить задачу» -->
+            <button type="button"
+                    class="button"
+                    data-js="open-modal">
+                + Добавить задачу
+            </button>
+
+            <!-- Список задач -->
+            <ul class="task-list"
+                data-js="task-list"
+                aria-label="Список задач"
+                style="margin-top: 20px;"></ul>
+
+            <!-- Пустое состояние -->
+            <div class="empty-state" data-js="empty-state" hidden>
+                <p class="empty-state__title">Пока нет задач</p>
+                <p class="empty-state__text">Нажмите «Добавить задачу», чтобы начать</p>
+            </div>
+
+        </div>
+    </main>
+
+</div>
+
+<!-- ================= МОДАЛЬНОЕ ОКНО (нативный <dialog>) ================= -->
+<dialog class="modal" data-js="task-dialog" aria-labelledby="task-dialog-title">
+    <form method="dialog" class="modal__body" data-js="task-form" novalidate>
+        <h2 class="modal__title" id="task-dialog-title">Новая задача</h2>
+
+        <div class="form__group">
+            <label for="task-title" class="form__label">Название задачи</label>
+            <input type="text"
+                   id="task-title"
+                   name="title"
+                   class="form__input"
+                   data-js="task-title-input"
+                   placeholder="Например: купить молоко"
+                   autocomplete="off">
+            <span class="form__error" data-js="task-title-error"></span>
+        </div>
+
+        <div class="modal__actions">
+            <button type="button"
+                    class="button button--ghost"
+                    data-js="close-modal">
+                Отмена
+            </button>
+            <button type="submit"
+                    class="button"
+                    data-js="save-task">
+                Сохранить
+            </button>
+        </div>
+    </form>
+</dialog>
+
+<script src="js/main.js"></script>
+</body>
+</html>
