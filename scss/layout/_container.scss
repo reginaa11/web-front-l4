@@ -1,0 +1,28 @@
+@use "../utils" as *;
+// Общий контейнер и layout приложения
+
+.container {
+  width: 100%;
+  max-width: $container-width;
+  margin: 0 auto;
+  padding: 0 16px;
+
+  @include respond-to("tablet") {
+    padding: 0 24px;
+  }
+}
+
+.app {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.app__main {
+  flex: 1;
+  padding: 24px 0 60px;
+
+  @include respond-to("tablet") {
+    padding: 32px 0 80px;
+  }
+}
