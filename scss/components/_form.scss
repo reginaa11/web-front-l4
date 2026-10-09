@@ -1,0 +1,50 @@
+@use "../utils" as *;
+
+// Форма (в модалке)
+
+.form__group {
+  margin-bottom: 16px;
+  display: flex;
+  flex-direction: column;
+}
+
+.form__label {
+  font-size: rem(14px);
+  font-weight: 600;
+  margin-bottom: 6px;
+  color: var(--color-text);
+}
+
+.form__input {
+  width: 100%;
+  padding: rem(10px) rem(14px);
+  font-family: inherit;
+  font-size: rem(15px);
+  color: var(--color-text);
+  background: var(--color-surface-2);
+  border: 1.5px solid var(--color-border);
+  border-radius: $radius-sm;
+  transition: border-color $transition-fast, box-shadow $transition-fast;
+
+  &:focus {
+    outline: none;
+    border-color: var(--color-accent);
+    box-shadow: 0 0 0 3px var(--color-accent-soft);
+  }
+
+  &:focus-visible {
+    outline: 3px solid var(--color-focus-ring);
+    outline-offset: 2px;
+  }
+
+  &.is-invalid {
+    border-color: var(--color-danger);
+  }
+}
+
+.form__error {
+  color: var(--color-danger);
+  font-size: rem(13px);
+  margin-top: 4px;
+  min-height: 16px;
+}

@@ -1,0 +1,46 @@
+@use "../utils" as *;
+
+// =========================================================
+// Типографика
+// =========================================================
+
+body {
+  font-family: $font-family-base;
+  font-size: $font-size-base;
+  background: var(--color-bg);
+  color: var(--color-text);
+  transition: background $transition-base, color $transition-base;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  font-weight: 700;
+  line-height: 1.25;
+  color: var(--color-text);
+}
+
+h1 {
+  font-size: rem(24px);
+
+  @include respond-to("tablet") {
+    font-size: rem(28px);
+  }
+}
+
+h2 {
+  font-size: rem(20px);
+
+  @include respond-to("tablet") {
+    font-size: rem(22px);
+  }
+}
+
+h3 {
+  font-size: rem(17px);
+}
+
+p {
+  color: var(--color-text);
+}
