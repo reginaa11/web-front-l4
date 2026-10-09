@@ -1,0 +1,19 @@
+@use "../utils" as *;
+
+// =========================================================
+// Генерация CSS-переменных из карт тем
+// =========================================================
+
+:root {
+  @each $name, $value in $theme-light {
+    --color-#{$name}: #{$value};
+  }
+  color-scheme: light;
+}
+
+[data-theme="dark"] {
+  @each $name, $value in $theme-dark {
+    --color-#{$name}: #{$value};
+  }
+  color-scheme: dark;
+}
