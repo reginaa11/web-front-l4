@@ -1,0 +1,64 @@
+// =========================================================
+// Переменные: цвета, шрифты, размеры, брейкпоинты
+// =========================================================
+
+// --- Шрифты ---
+$font-family-base: "Segoe UI", "Helvetica Neue", Arial, sans-serif;
+$font-size-base: 16px;
+
+// --- Размеры ---
+$container-width: 960px;
+$radius-sm: 8px;
+$radius-md: 12px;
+$radius-lg: 20px;
+
+// --- Тайминги ---
+$transition-fast: 0.15s ease;
+$transition-base: 0.25s ease;
+$transition-slow: 0.4s ease;
+
+// --- Тени ---
+$shadow-sm: 0 2px 6px rgba(0, 0, 0, 0.06);
+$shadow-md: 0 4px 14px rgba(0, 0, 0, 0.08);
+$shadow-lg: 0 10px 28px rgba(0, 0, 0, 0.12);
+
+// --- Брейкпоинты (mobile-first, min-width) ---
+$breakpoints: (
+  "mobile": 480px,
+  "tablet": 768px,
+  "desktop": 1024px,
+);
+
+// --- Палитра: светлая тема ---
+$theme-light: (
+  "bg": #f7f5fb,
+  "surface": #ffffff,
+  "surface-2": #f0ecf7,
+  "text": #1f1b2e,
+  "muted": #6b6480,
+  "accent": #7c5cbf,
+  "accent-hover": #6a4ca8,
+  "accent-soft": #ede7f8,
+  "border": #e2dcef,
+  "danger": #c33a5b,
+  "danger-hover": #a82f4c,
+  "success": #2e7d5b,
+  "focus-ring": #9c7fe0,
+);
+
+// --- Палитра: тёмная тема ---
+$theme-dark: (
+  "bg": #14111d,
+  "surface": #1e1a2a,
+  "surface-2": #262033,
+  "text": #ede9f5,
+  "muted": #a89dbf,
+  "accent": #a98ce0,
+  "accent-hover": #bda3ec,
+  "accent-soft": #2c2440,
+  "border": #362e47,
+  "danger": #ef6b88,
+  "danger-hover": #f28fa5,
+  "success": #6fcf9a,
+  "focus-ring": #bda3ec,
+);

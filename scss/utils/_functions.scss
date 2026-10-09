@@ -1,0 +1,30 @@
+@use "sass:math";
+@use "sass:map";
+
+// =========================================================
+// Функции
+// =========================================================
+
+// Перевод пикселей в rem
+@function rem($px, $base: 16px) {
+  @if math.is-unitless($px) {
+    $px: $px * 1px;
+  }
+  @return math.div($px, $base) * 1rem;
+}
+
+// Перевод пикселей в em
+@function em($px, $base: 16px) {
+  @if math.is-unitless($px) {
+    $px: $px * 1px;
+  }
+  @return math.div($px, $base) * 1em;
+}
+
+// Получить значение из карты с проверкой
+@function get($map-data, $key) {
+  @if not map.has-key($map-data, $key) {
+    @error "Ключ `#{$key}` не найден в карте.";
+  }
+  @return map.get($map-data, $key);
+}
