@@ -1,0 +1,12 @@
+{
+  "name": "web-front-l4",
+  "version": "1.0.0",
+  "description": "To-Do List на Sass с доступным интерфейсом (ЛР4)",
+  "scripts": {
+    "sass:dev": "sass --watch scss/main.scss:dist/css/main.css",
+    "build": "sass --no-source-map --style=compressed scss/main.scss:dist/css/main.css"
+  },
+  "devDependencies": {
+    "sass": "^1.105.1"
+  }
+}
