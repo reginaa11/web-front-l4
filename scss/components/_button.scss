@@ -1,0 +1,89 @@
+@use "../utils" as *;
+
+// Кнопка — со всеми состояниями и модификаторами
+
+.button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: rem(10px) rem(18px);
+  font-family: inherit;
+  font-size: rem(15px);
+  font-weight: 600;
+  line-height: 1.2;
+  color: #fff;
+  background: var(--color-accent);
+  border: 1.5px solid var(--color-accent);
+  border-radius: $radius-sm;
+  cursor: pointer;
+  transition: background $transition-fast, border-color $transition-fast,
+    transform $transition-fast;
+
+  // --- Состояния ---
+  &:hover {
+    background: var(--color-accent-hover);
+    border-color: var(--color-accent-hover);
+  }
+
+  &:focus-visible {
+    outline: 3px solid var(--color-focus-ring);
+    outline-offset: 2px;
+  }
+
+  &:active {
+    transform: translateY(1px);
+  }
+
+  &:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+    transform: none;
+  }
+
+  // --- Модификатор: вторичная (прозрачная) ---
+  &--ghost {
+    background: transparent;
+    color: var(--color-accent);
+    border-color: var(--color-accent);
+
+    &:hover {
+      background: var(--color-accent-soft);
+      color: var(--color-accent-hover);
+    }
+  }
+
+  // --- Модификатор: иконка ---
+  &--icon {
+    padding: 0;
+    width: 36px;
+    height: 36px;
+    background: transparent;
+    color: var(--color-muted);
+    border-color: transparent;
+    border-radius: 50%;
+
+    &:hover {
+      background: var(--color-accent-soft);
+      color: var(--color-accent);
+    }
+  }
+
+  // --- Модификатор: опасное действие (удаление) ---
+  &--danger {
+    background: transparent;
+    color: var(--color-danger);
+    border-color: transparent;
+
+    &:hover {
+      background: rgba(195, 58, 91, 0.1);
+      color: var(--color-danger-hover);
+    }
+  }
+
+  // --- Модификатор: маленькая ---
+  &--small {
+    padding: rem(6px) rem(12px);
+    font-size: rem(13px);
+  }
+}

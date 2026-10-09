@@ -1,0 +1,37 @@
+@use "../utils" as *;
+
+// Модальное окно (нативный <dialog>)
+
+.modal {
+  border: none;
+  border-radius: $radius-md;
+  padding: 0;
+  max-width: 440px;
+  width: calc(100% - 32px);
+  background: var(--color-surface);
+  color: var(--color-text);
+  box-shadow: $shadow-lg;
+
+  // Затемнение фона — открывается через ::backdrop
+  &::backdrop {
+    background: rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(2px);
+  }
+}
+
+.modal__body {
+  padding: 24px;
+}
+
+.modal__title {
+  font-size: rem(20px);
+  font-weight: 700;
+  margin-bottom: 16px;
+}
+
+.modal__actions {
+  display: flex;
+  gap: 10px;
+  justify-content: flex-end;
+  margin-top: 20px;
+}

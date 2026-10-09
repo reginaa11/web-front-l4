@@ -1,0 +1,35 @@
+@use "../utils" as *;
+
+// Поиск задач
+
+.search {
+  margin: 20px 0 24px;
+  max-width: 480px;
+}
+
+.search__input {
+  width: 100%;
+  padding: rem(12px) rem(16px);
+  font-family: inherit;
+  font-size: rem(15px);
+  color: var(--color-text);
+  background: var(--color-surface);
+  border: 1.5px solid var(--color-border);
+  border-radius: $radius-sm;
+  transition: border-color $transition-fast, box-shadow $transition-fast;
+
+  &::placeholder {
+    color: var(--color-muted);
+  }
+
+  &:focus {
+    outline: none;
+    border-color: var(--color-accent);
+    box-shadow: 0 0 0 3px var(--color-accent-soft);
+  }
+
+  &:focus-visible {
+    outline: 3px solid var(--color-focus-ring);
+    outline-offset: 2px;
+  }
+}

@@ -1,0 +1,41 @@
+@use "../utils" as *;
+
+// Список задач
+
+.task-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.task-list__item {
+  // Обёртка над .task
+}
+
+// =========================================================
+// Пустое состояние
+// =========================================================
+
+.empty-state {
+  text-align: center;
+  padding: 40px 20px;
+  color: var(--color-muted);
+
+  &[hidden] {
+    display: none;
+  }
+}
+
+.empty-state__title {
+  font-size: rem(18px);
+  font-weight: 600;
+  color: var(--color-text);
+  margin-bottom: 8px;
+}
+
+.empty-state__text {
+  font-size: rem(14px);
+}

@@ -1,0 +1,6 @@
+@use "../utils" as *;
+// Визуально скрытый элемент (для доступности A3)
+
+.visually-hidden {
+  @include visually-hidden;
+}
